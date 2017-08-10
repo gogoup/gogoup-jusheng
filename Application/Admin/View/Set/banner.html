@@ -1,0 +1,158 @@
+<div class="container-fluid">
+
+    <!-- BEGIN PAGE HEADER-->
+
+    <div class="row-fluid">
+
+        <div class="span12">
+
+            <!-- BEGIN STYLE CUSTOMIZER -->
+
+            <div class="color-panel hidden-phone">
+
+                <div class="color-mode-icons icon-color"></div>
+
+                <div class="color-mode-icons icon-color-close"></div>
+
+                <div class="color-mode">
+
+                    <p>THEME COLOR</p>
+
+                    <ul class="inline">
+
+                        <li class="color-black current color-default" data-style="default"></li>
+
+                        <li class="color-blue" data-style="blue"></li>
+
+                        <li class="color-brown" data-style="brown"></li>
+
+                        <li class="color-purple" data-style="purple"></li>
+
+                        <li class="color-grey" data-style="grey"></li>
+
+                        <li class="color-white color-light" data-style="light"></li>
+
+                    </ul>
+
+                    <label>
+
+                        <span>Layout</span>
+
+                        <select class="layout-option m-wrap small">
+
+                            <option value="fluid" selected>Fluid</option>
+
+                            <option value="boxed">Boxed</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Header</span>
+
+                        <select class="header-option m-wrap small">
+
+                            <option value="fixed" selected>Fixed</option>
+
+                            <option value="default">Default</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Sidebar</span>
+
+                        <select class="sidebar-option m-wrap small">
+
+                            <option value="fixed">Fixed</option>
+
+                            <option value="default" selected>Default</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Footer</span>
+
+                        <select class="footer-option m-wrap small">
+
+                            <option value="fixed">Fixed</option>
+
+                            <option value="default" selected>Default</option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- END BEGIN STYLE CUSTOMIZER -->
+
+            <h3 class="page-title">
+
+                网站信息
+
+                <small></small>
+
+            </h3>
+
+            <ul class="breadcrumb">
+
+                <li>
+
+                    <i class="icon-home"></i>
+
+                    <a href="{:U('Index/index')}">主页</a>
+
+                    <span class="icon-angle-right"></span>
+
+                </li>
+
+                <li>
+
+                    <a href="#">设置</a>
+
+                    <span class="icon-angle-right"></span>
+
+                </li>
+
+                <li><a href="#">网站信息</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <!-- BEGIN PAGE CONTENT-->
+
+    <div class="row-fluid" >
+        <div class="banner1" style="width: 50%; float: left;">
+             <iframe src="banner1.html"   frameborder="0" scrolling="no"  width="80%" height="1000px"></iframe>
+        </div>
+        <div style="float: right;">
+            <h3>更换图片：</h3>
+            <form action="{:U('Set/bannered')}" method="post" enctype="multipart/form-data" id="myForm">
+                <volist name="img" id="img">
+                        <span><img src="__PUBLIC__/{$img.b_img}" width="100px ">no.{$img.b_id}：<input type="file" name="img{$img.b_id}"></span><br/><span style="border: 1px black solid">删除</span><br />
+                </volist>
+
+                <button class="btn-blue" type="submit" style="margin: 1rem">SAVE</button><button class="bth" type="reset" style="margin-left: 5rem">重置</button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- END PAGE CONTENT-->
+
+</div>

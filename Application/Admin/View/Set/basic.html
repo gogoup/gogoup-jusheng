@@ -1,0 +1,204 @@
+<div class="container-fluid">
+
+    <!-- BEGIN PAGE HEADER-->
+
+    <div class="row-fluid">
+
+        <div class="span12">
+
+            <!-- BEGIN STYLE CUSTOMIZER -->
+
+            <div class="color-panel hidden-phone">
+
+                <div class="color-mode-icons icon-color"></div>
+
+                <div class="color-mode-icons icon-color-close"></div>
+
+                <div class="color-mode">
+
+                    <p>THEME COLOR</p>
+
+                    <ul class="inline">
+
+                        <li class="color-black current color-default" data-style="default"></li>
+
+                        <li class="color-blue" data-style="blue"></li>
+
+                        <li class="color-brown" data-style="brown"></li>
+
+                        <li class="color-purple" data-style="purple"></li>
+
+                        <li class="color-grey" data-style="grey"></li>
+
+                        <li class="color-white color-light" data-style="light"></li>
+
+                    </ul>
+
+                    <label>
+
+                        <span>Layout</span>
+
+                        <select class="layout-option m-wrap small">
+
+                            <option value="fluid" selected>Fluid</option>
+
+                            <option value="boxed">Boxed</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Header</span>
+
+                        <select class="header-option m-wrap small">
+
+                            <option value="fixed" selected>Fixed</option>
+
+                            <option value="default">Default</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Sidebar</span>
+
+                        <select class="sidebar-option m-wrap small">
+
+                            <option value="fixed">Fixed</option>
+
+                            <option value="default" selected>Default</option>
+
+                        </select>
+
+                    </label>
+
+                    <label>
+
+                        <span>Footer</span>
+
+                        <select class="footer-option m-wrap small">
+
+                            <option value="fixed">Fixed</option>
+
+                            <option value="default" selected>Default</option>
+
+                        </select>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+            <!-- END BEGIN STYLE CUSTOMIZER -->
+
+            <h3 class="page-title">
+
+               网站信息
+
+                <small></small>
+
+            </h3>
+
+            <ul class="breadcrumb">
+
+                <li>
+
+                    <i class="icon-home"></i>
+
+                    <a href="{:U('Index/index')}">主页</a>
+
+                    <span class="icon-angle-right"></span>
+
+                </li>
+
+                <li>
+
+                    <a href="#">设置</a>
+
+                    <span class="icon-angle-right"></span>
+
+                </li>
+
+                <li><a href="#">网站信息</a></li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+    <!-- END PAGE HEADER-->
+
+    <!-- BEGIN PAGE CONTENT-->
+
+    <div class="row-fluid">
+
+        <div class="span12">
+
+            <!-- BEGIN SAMPLE FORM PORTLET-->
+
+            <div class="portlet box blue">
+
+
+
+                <div class="portlet-body form">
+
+                    <!-- BEGIN FORM-->
+
+                    <form action="{:U('Set/basiced')}" class="form-horizontal" method="post">
+                        <volist name="data" id="list">
+                        <div class="control-group">
+
+                            <label class="control-label">{$list.l_title}</label>
+                                <input type="hidden" value="{$list.l_id}" name="{$list.l_id}[l_id]">
+                            <div class="controls">
+                                <if condition="$list['l_type'] eq 3">
+
+                                        <textarea class="span6 m-wrap" rows="3" name="{$list.l_id}[l_value]">{$list.l_value}</textarea>
+
+                                <elseif condition="$list['l_type'] eq 2" />
+                                        {$list.l_value}
+                                <elseif condition="$list['l_type'] eq 1" />
+                                    <input type="text" class="span6 m-wrap" name="{$list.l_id}[l_value]" value="{$list.l_value}" />
+                                </if>
+
+                                <span class="help-inline">{$list.l_name}</span>
+
+
+
+                            </div>
+
+                        </div>
+                            </volist>
+
+                        <div class="form-actions">
+
+                            <button type="submit" class="btn blue">Submit</button>
+
+                            <button type="button" class="btn">Cancel</button>
+
+                        </div>
+
+                    </form>
+
+                    <!-- END FORM-->
+
+                </div>
+
+            </div>
+
+            <!-- END SAMPLE FORM PORTLET-->
+
+        </div>
+
+    </div>
+
+
+    <!-- END PAGE CONTENT-->
+
+</div>
